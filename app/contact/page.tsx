@@ -1,0 +1,5 @@
+import { ContactForm } from "@/components/ContactForm";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { site } from "@/lib/site";
+export const metadata={title:"Contact"};
+export default function Contact(){return <><section className="page-hero"><div className="container"><span className="eyebrow">CONTACT</span><h1>Talk to a robotics specialist.</h1><p>For sales, supplier partnerships, demonstrations, rentals and integration projects.</p></div></section><section className="section"><div className="container contact-grid"><div><h2>Contact details</h2><div className="contact-item"><MapPin/><div><b>Market</b><span>{site.city}</span></div></div><div className="contact-item"><Phone/><div><b>Phone</b><span>{site.phone}</span></div></div><div className="contact-item"><MessageCircle/><div><b>WhatsApp</b><span>{site.whatsapp}</span></div></div><div className="contact-item"><Mail/><div><b>Email</b><span>{site.email}</span></div></div><p className="muted">Replace these placeholder contact details in <code>lib/site.ts</code> before publishing.</p></div><ContactForm/></div></section></>}

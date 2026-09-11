@@ -1,0 +1,13 @@
+node_modules
+.next
+.env
+.env.local
+.vercel
+.DS_Store
+npm-debug.log*
+
+# Local runtime and build artifacts
+*.log
+*.tsbuildinfo
+.env.*
+!.env.example
