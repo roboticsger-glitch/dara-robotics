@@ -1,6 +1,6 @@
 export const site = {
-  name: "Nexa Robotics",
-  legalName: "Nexa Robotics",
+  name: "Dara Robotics",
+  legalName: "Dara Robotics",
   email: "sales@example.com",
   phone: "To be confirmed",
   whatsapp: "To be confirmed",

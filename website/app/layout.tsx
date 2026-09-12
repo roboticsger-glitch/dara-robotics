@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: { default: "Nexa Robotics | Robotics & Automation", template: "%s | Nexa Robotics" },
+  title: { default: "Dara Robotics | Robotics & Automation", template: "%s | Dara Robotics" },
   description: "Robotics, automation, rental, integration and support solutions for businesses.",
 };
 

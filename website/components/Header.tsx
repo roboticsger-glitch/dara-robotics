@@ -19,7 +19,7 @@ export function Header() {
       <div className="container nav-wrap">
         <Link className="brand" href="/" onClick={() => setOpen(false)}>
           <span className="brand-mark"><Bot size={24} /></span>
-          <span>NEXA <b>ROBOTICS</b></span>
+          <span>DARA <b>ROBOTICS</b></span>
         </Link>
         <nav className={`nav-links ${open ? "open" : ""}`}>
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}

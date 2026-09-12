@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="brand footer-brand"><span className="brand-mark"><Bot size={22}/></span><span>NEXA <b>ROBOTICS</b></span></div>
+          <div className="brand footer-brand"><span className="brand-mark"><Bot size={22}/></span><span>DARA <b>ROBOTICS</b></span></div>
           <p>{site.tagline}</p>
           <p className="muted">Robots shown on this demo website are representative catalogue concepts. Replace them with your approved supplier models before launch.</p>
         </div>

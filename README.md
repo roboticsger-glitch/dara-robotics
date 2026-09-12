@@ -1,4 +1,4 @@
-# Nexa Robotics - Team Tasks
+# Dara Robotics - Team Tasks
 
 This checklist is the shared launch backlog. Tasks remain unchecked until completed and reviewed. Add your name beside a task when you take ownership, and link your work or pull request when it is ready.
 
@@ -33,9 +33,9 @@ This checklist is the shared launch backlog. Tasks remain unchecked until comple
 - [ ] Track leads, supplier responses, costs, and sales progress.
 
 ## Team working branches
-- [Abdullah](https://github.com/roboticsger-glitch/nexa-robotics/tree/abdullah)
-- [Akram](https://github.com/roboticsger-glitch/nexa-robotics/tree/akram)
-- [Osama](https://github.com/roboticsger-glitch/nexa-robotics/tree/osama)
+- [Abdullah](https://github.com/roboticsger-glitch/dara-robotics/tree/abdullah)
+- [Akram](https://github.com/roboticsger-glitch/dara-robotics/tree/akram)
+- [Osama](https://github.com/roboticsger-glitch/dara-robotics/tree/osama)
 
 Use your branch for website changes and open a pull request into `main` for review. Collaborator access is required to push directly. Update this checklist on `main` so everyone sees the latest progress.
 
