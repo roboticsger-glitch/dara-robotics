@@ -11,4 +11,4 @@
 9. Replace placeholder contact/company details in `lib/site.ts`.
 10. Push to GitHub and import into Vercel. Add the same environment variables in Vercel.
 11. Connect your domain and verify quote/contact submissions.
-12. Before commercial launch, add final Saudi legal/privacy/returns/VAT/CR content appropriate to your entity and product categories.
+12. Before commercial launch, add final legal/privacy/returns/tax/business-registration content appropriate to your entity and product categories.

@@ -1,4 +1,4 @@
-# Nexa Robotics Saudi — full-stack website starter
+# Nexa Robotics — full-stack website starter
 
 A deployable B2B robotics website built with Next.js 16.3, React 19.2 and Supabase, including SSR auth cookie refresh through Next.js Proxy.
 
@@ -42,7 +42,7 @@ SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVER_ONLY_SERVICE_ROLE_KEY
 - Edit company details in `lib/site.ts`.
 - Replace Nexa Robotics with your final brand name.
 - Replace all demo robot products and stock imagery with approved supplier models/assets.
-- Add your CR/VAT/legal/privacy/returns information as appropriate for your Saudi entity and sales model.
+- Add your CR/VAT/legal/privacy/returns information as appropriate for your business entity and sales model.
 - Create an admin user in Supabase Auth and make its email equal to `ADMIN_EMAIL`.
 - Add email / WhatsApp / CRM notifications for new quote requests.
 

@@ -1,4 +1,4 @@
-# Nexa Robotics Saudi - Team Tasks
+# Nexa Robotics - Team Tasks
 
 This checklist is the shared launch backlog. Tasks remain unchecked until completed and reviewed. Add your name beside a task when you take ownership, and link your work or pull request when it is ready.
 
@@ -14,15 +14,15 @@ This checklist is the shared launch backlog. Tasks remain unchecked until comple
 - [ ] Prepare social media posts, reels, and robot videos.
 
 ## Products, suppliers, and import planning
-- [ ] Research competitors in Saudi Arabia.
+- [ ] Research competitors in our target markets.
 - [ ] Prepare a product/supplier spreadsheet.
 - [ ] Calculate selling prices, shipping, VAT, customs, and expected profit.
-- [ ] Research SABER, customs, HS codes, CST, and import requirements.
+- [ ] Research product certifications, customs, HS codes, telecommunications approvals, and import requirements for target markets.
 - [ ] Find a shipping/customs broker.
 
 ## Sales and customer outreach
 - [ ] Prepare quotation and invoice templates.
-- [ ] Build a list of potential customers in Saudi Arabia.
+- [ ] Build a list of potential customers in our target markets.
 - [ ] Contact hotels, restaurants, factories, warehouses, hospitals, and universities.
 - [ ] Plan robot demonstrations.
 
@@ -33,9 +33,9 @@ This checklist is the shared launch backlog. Tasks remain unchecked until comple
 - [ ] Track leads, supplier responses, costs, and sales progress.
 
 ## Team working branches
-- [Abdullah](https://github.com/roboticsger-glitch/nexa-robotics-saudi/tree/abdullah)
-- [Akram](https://github.com/roboticsger-glitch/nexa-robotics-saudi/tree/akram)
-- [Osama](https://github.com/roboticsger-glitch/nexa-robotics-saudi/tree/osama)
+- [Abdullah](https://github.com/roboticsger-glitch/nexa-robotics/tree/abdullah)
+- [Akram](https://github.com/roboticsger-glitch/nexa-robotics/tree/akram)
+- [Osama](https://github.com/roboticsger-glitch/nexa-robotics/tree/osama)
 
 Use your branch for website changes and open a pull request into `main` for review. Collaborator access is required to push directly. Update this checklist on `main` so everyone sees the latest progress.
 
