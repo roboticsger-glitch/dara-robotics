@@ -12,3 +12,4 @@
 .site-header .nav-links>a.button:hover{color:var(--gold)!important}
 .site-header .language-toggle{background:#0b5cff;color:#fff;border-color:#0b5cff}.site-header .language-toggle:hover{background:#0b5cff;color:var(--gold);border-color:#0b5cff}
 .site-header .nav-links>a:not(.button){font-weight:700}.site-header .nav-links>a:not(.button):hover{color:var(--gold)!important}
+.site-header .language-toggle{background:#fff;color:var(--ink);border-color:#c8d3d8}.site-header .language-toggle:hover{background:#fff;color:var(--gold);border-color:var(--gold)}
