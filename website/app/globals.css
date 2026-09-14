@@ -9,3 +9,4 @@
 .site-header .button{background:#0b2a4a;color:#fff;box-shadow:0 8px 22px rgba(11,42,74,.2)}.site-header .button:hover{filter:brightness(1.12)}
 :root{--gold:#d4a62a}a:hover{color:var(--gold)}.button:hover{background:var(--gold);color:#071017;filter:none}.language-toggle:hover{border-color:var(--gold);color:var(--gold)}
 .button:hover{background:var(--accent);color:var(--gold);filter:none}.site-header .button:hover{background:#0b2a4a;color:var(--gold);filter:none}.button.light:hover{background:#fff;color:var(--gold)}.button.ghost:hover{background:transparent;color:var(--gold)}
+.site-header .nav-links>a.button:hover{color:var(--gold)!important}
