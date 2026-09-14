@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, X, Bot, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -24,6 +25,7 @@ export function Header() {
         <nav className={`nav-links ${open ? "open" : ""}`}>
           {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
           <Link className="button button-small" href="/request-quote" onClick={() => setOpen(false)}><MessageCircle size={16}/> Request a Quote</Link>
+          <LanguageToggle />
         </nav>
         <button className="menu-button" aria-label="Toggle menu" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
       </div>
