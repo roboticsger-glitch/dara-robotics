@@ -7,3 +7,4 @@
 
 .site-header{background:#fff;border-bottom:1px solid var(--line)}.site-header .brand{color:var(--ink)}.site-header .nav-links{color:var(--text)}.site-header .nav-links>a:hover{color:#087f65}.site-header .menu-button{color:var(--ink)}.site-header .language-toggle{border-color:#c8d3d8;color:var(--ink);background:#fff}@media(max-width:950px){.site-header .nav-links{background:#fff;border-top-color:var(--line)}}
 .site-header .button{background:#0b2a4a;color:#fff;box-shadow:0 8px 22px rgba(11,42,74,.2)}.site-header .button:hover{filter:brightness(1.12)}
+:root{--gold:#d4a62a}a:hover{color:var(--gold)}.button:hover{background:var(--gold);color:#071017;filter:none}.language-toggle:hover{border-color:var(--gold);color:var(--gold)}
