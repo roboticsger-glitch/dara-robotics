@@ -6,3 +6,4 @@
 .brand-logo{width:118px;height:58px;object-fit:contain;border-radius:9px;padding:3px}.footer-logo{width:170px;height:105px;object-fit:contain;object-position:left center;border-radius:12px;padding:6px}
 
 .site-header{background:#fff;border-bottom:1px solid var(--line)}.site-header .brand{color:var(--ink)}.site-header .nav-links{color:var(--text)}.site-header .nav-links>a:hover{color:#087f65}.site-header .menu-button{color:var(--ink)}.site-header .language-toggle{border-color:#c8d3d8;color:var(--ink);background:#fff}@media(max-width:950px){.site-header .nav-links{background:#fff;border-top-color:var(--line)}}
+.site-header .button{background:#0b2a4a;color:#fff;box-shadow:0 8px 22px rgba(11,42,74,.2)}.site-header .button:hover{filter:brightness(1.12)}
