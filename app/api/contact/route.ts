@@ -1,0 +1,4 @@
+import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+function serverDb(){const u=process.env.NEXT_PUBLIC_SUPABASE_URL,k=process.env.SUPABASE_SERVICE_ROLE_KEY;if(!u||!k)return null;return createClient(u,k,{auth:{persistSession:false}})}
+export async function POST(req:Request){try{const b=await req.json();if(!b.name||!b.email||!b.message)return NextResponse.json({error:"Name, email and message are required."},{status:400});const db=serverDb();if(!db)return NextResponse.json({message:"Demo mode: connect Supabase to store contact messages."});const {error}=await db.from("contact_messages").insert({name:b.name,email:b.email,subject:b.subject||null,message:b.message,status:"new"});if(error)throw error;return NextResponse.json({message:"Thanks — your message has been received."})}catch(e){return NextResponse.json({error:e instanceof Error?e.message:"Could not send message"},{status:500})}}

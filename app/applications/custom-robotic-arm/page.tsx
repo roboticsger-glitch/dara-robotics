@@ -1,0 +1,3 @@
+﻿import { ApplicationProductDisplay } from "@/components/ApplicationProductDisplay";
+export const metadata={title:"Custom Robotic Arms | Dara Robotics",description:"A robotic-arm solution configured around your specific task, workspace and workflow."};
+export default function ApplicationPage(){return <ApplicationProductDisplay product={{eyebrow:"CUSTOM ROBOTIC ARMS",title:"Custom Robotic Arms",description:"A robotic-arm solution configured around your specific task, workspace and workflow.",gif:"/robotic-arms/custom-robotic-arm.gif",preview:"/robotic-arms/custom-robotic-arm-preview.png",benefits:["Configuration around your task", "Workspace and equipment planning", "Custom tooling options", "Project requirements review"]}}/>}

@@ -1,0 +1,1 @@
+import Link from "next/link";export default function NotFound(){return <section className="section"><div className="container narrow center"><h1>Page not found</h1><p>The page or robot model you requested does not exist.</p><Link className="button" href="/">Back home</Link></div></section>}
