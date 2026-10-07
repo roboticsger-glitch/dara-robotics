@@ -37,7 +37,17 @@ export function Header() {
             </button>
             <div className="nav-dropdown-menu">
               <Link className="nav-dropdown-all" href="/robots" onClick={() => { setOpen(false); setRobotsOpen(false); }}>View All Robots <span>→</span></Link>
-              {robotCategories.map(([Icon, label]) => <Link key={label} href={label === "Robotic Arms" ? "/robots/robotic-arms" : "/robots"} onClick={() => { setOpen(false); setRobotsOpen(false); }}><b>{label}</b><Icon className={"nav-dropdown-icon " + (label === "Robotic Arms" ? "robotic-arm-icon" : "")} aria-hidden="true" /></Link>)}
+              {robotCategories.map(([Icon, label]) => {
+                const categoryRoutes: Record<string, string> = {
+                  "Robotic Arms": "/robots/robotic-arms",
+                  "Healthcare Assistant Robots": "/robots/healthcare-assistant-robots",
+                  "Hotel Service Robots": "/robots/hotel-service-robots",
+                  "Autonomous Cleaning Robots": "/robots/autonomous-cleaning-robots",
+                  "Reception & Guest Experience Robots": "/robots/reception-guest-experience-robots",
+                };
+                const href = categoryRoutes[label] ?? "/robots";
+                return <Link key={label} href={href} onClick={() => { setOpen(false); setRobotsOpen(false); }}><b>{label}</b><Icon className={"nav-dropdown-icon " + (label === "Robotic Arms" ? "robotic-arm-icon" : "")} aria-hidden="true" /></Link>;
+              })}
             </div>
           </div>
           {links.slice(1).map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}

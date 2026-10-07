@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { arabicTranslations } from "@/lib/arTranslations";
 const translations: Record<string,string>={Robots:"الروبوتات",Solutions:"الحلول",Services:"الخدمات",About:"من نحن",Contact:"اتصل بنا","Request a Quote":"اطلب عرض سعر","Explore Robots":"استكشف الروبوتات",Purchase:"شراء",Rental:"تأجير","Local Integration":"تكامل محلي",Hospitality:"الضيافة",Facilities:"إدارة المرافق",Logistics:"الخدمات اللوجستية",Manufacturing:"التصنيع",Inspection:"الفحص والتفتيش",INDUSTRIES:"القطاعات",SERVICES:"الخدمات","ROBOT CATALOGUE":"كتالوج الروبوتات"};
 Object.assign(translations,{"View All Robots":"\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u0627\u062a","Robotic Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Healthcare Assistant Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u0631\u0639\u0627\u064a\u0629 \u0648\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629 \u0627\u0644\u0635\u062d\u064a\u0629","Hotel Service Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0641\u0646\u0627\u062f\u0642 \u0648\u0627\u0644\u0636\u064a\u0627\u0641\u0629","Autonomous Cleaning Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u062a\u0646\u0638\u064a\u0641 \u0627\u0644\u0630\u0627\u062a\u064a","Reception & Guest Experience Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u0642\u0628\u0627\u0644 \u0648\u062e\u062f\u0645\u0629 \u0627\u0644\u0636\u064a\u0648\u0641"});Object.assign(translations,{"ROBOTIC ARMS":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Choose the right robotic arm.":"\u0627\u062e\u062a\u0631 \u0627\u0644\u0630\u0631\u0627\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a \u0627\u0644\u0645\u0646\u0627\u0633\u0628.","Explore different arm types and find the platform that fits your task, environment and production goals.":"\u0627\u0633\u062a\u0643\u0634\u0641 \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0623\u0630\u0631\u0639 \u0648\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0646\u0635\u0629 \u0627\u0644\u0645\u0646\u0627\u0633\u0628\u0629 \u0644\u0645\u0647\u0645\u062a\u0643 \u0648\u0628\u064a\u0626\u062a\u0643 \u0648\u0623\u0647\u062f\u0627\u0641 \u0627\u0644\u0625\u0646\u062a\u0627\u062c.","ARM CATEGORIES":"\u0641\u0626\u0627\u062a \u0627\u0644\u0623\u0630\u0631\u0639","Different arms for different jobs.":"\u0623\u0630\u0631\u0639 \u0645\u062e\u062a\u0644\u0641\u0629 \u0644\u0645\u0647\u0627\u0645 \u0645\u062e\u062a\u0644\u0641\u0629.","We help you select the arm, gripper, vision, safety and integration package for your operation.":"\u0646\u0633\u0627\u0639\u062f\u0643 \u0641\u064a \u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0630\u0631\u0627\u0639 \u0648\u0623\u062f\u0627\u0629 \u0627\u0644\u0625\u0645\u0633\u0627\u0643 \u0648\u0627\u0644\u0631\u0624\u064a\u0629 \u0648\u0627\u0644\u0633\u0644\u0627\u0645\u0629 \u0648\u062d\u0632\u0645\u0629 \u0627\u0644\u0631\u0628\u0637 \u0644\u0639\u0645\u0644\u0643.","Collaborative Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u062a\u0639\u0627\u0648\u0646\u064a\u0629","6-Axis Industrial Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629 \u0630\u0627\u062a \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0633\u062f\u0627\u0633\u064a","SCARA Robot Arms":"\u0623\u0630\u0631\u0639 SCARA \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Delta Robot Arms":"\u0623\u0630\u0631\u0639 \u062f\u064a\u0644\u062a\u0627 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Cartesian Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0627\u0644\u062f\u064a\u0643\u0627\u0631\u062a\u064a\u0629","Welding Robot Arms":"\u0623\u0630\u0631\u0639 \u0627\u0644\u0644\u062d\u0627\u0645 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Educational Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629","Hospitality Robot Arms":"\u0623\u0630\u0631\u0639 \u0627\u0644\u0636\u064a\u0627\u0641\u0629 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Safe, flexible cobots for people-focused tasks, assembly and service workflows.":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u062a\u0639\u0627\u0648\u0646\u064a\u0629 \u0622\u0645\u0646\u0629 \u0648\u0645\u0631\u0646\u0629 \u0644\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u062a\u0641\u0627\u0639\u0644\u064a\u0629 \u0648\u0627\u0644\u062a\u0631\u0643\u064a\u0628 \u0648\u0627\u0644\u062e\u062f\u0645\u0627\u062a.","Discuss this arm":"\u0646\u0646\u0627\u0642\u0634 \u0647\u0630\u0627 \u0627\u0644\u0630\u0631\u0627\u0639"});Object.assign(translations,{
 "High-reach, high-repeatability arms for manufacturing, welding and machine tending.":"\u0623\u0630\u0631\u0639 \u0630\u0627\u062a \u0645\u062f\u0649 \u062a\u0634\u063a\u064a\u0644 \u0648\u062a\u0643\u0631\u0627\u0631\u064a\u0629 \u0639\u0627\u0644\u064a\u0629 \u0644\u0644\u062a\u0635\u0646\u064a\u0639 \u0648\u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u062a\u063a\u0630\u064a\u0629 \u0627\u0644\u0622\u0644\u0627\u062a.",
@@ -152,13 +153,37 @@ Object.assign(translations,{
 "Discuss Your Project With Us":"\u0646\u0627\u0642\u0634 \u0645\u0634\u0631\u0648\u0639\u0643 \u0645\u0639\u0646\u0627",
 "Request a Quote":"\u0627\u0637\u0644\u0628 \u0639\u0631\u0636 \u0633\u0639\u0631"
 });
-function applyLanguage(arabic:boolean){document.documentElement.lang=arabic?'ar':'en';document.documentElement.dir=arabic?'rtl':'ltr';const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node:Node|null;while(node=walker.nextNode()){const value=node.nodeValue?.trim();if(!value)continue;const translated=arabic?translations[value]:Object.entries(translations).find(([,v])=>v===value)?.[0];if(translated)node.nodeValue=node.nodeValue?.replace(value,translated)??translated;}}
+function applyLanguage(arabic:boolean){
+  Object.assign(translations,arabicTranslations);
+  document.documentElement.lang=arabic?'ar':'en';
+  document.documentElement.dir=arabic?'rtl':'ltr';
+  const reverse=new Map(Object.entries(translations).map(([english,translated])=>[translated,english]));
+  const translate=(value:string)=>arabic?translations[value]:reverse.get(value);
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let node:Node|null;
+  while(node=walker.nextNode()){
+    const value=node.nodeValue?.trim();
+    if(!value)continue;
+    const translated=translate(value);
+    if(translated)node.nodeValue=node.nodeValue?.replace(value,translated)??translated;
+  }
+  document.querySelectorAll<HTMLElement>('[placeholder],[title],[aria-label]').forEach((element)=>{
+    for(const attribute of ['placeholder','title','aria-label']){
+      const value=element.getAttribute(attribute);
+      if(!value)continue;
+      const translated=translate(value);
+      if(translated)element.setAttribute(attribute,translated);
+    }
+  });
+}
 Object.assign(translations,{"Coffee equipment integration":"\u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0631\u0628\u0637 \u0627\u0644\u0646\u0638\u0627\u0645 \u0628\u0645\u0639\u062f\u0627\u062a \u0648\u0622\u0644\u0627\u062a \u0627\u0644\u0642\u0647\u0648\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629"});Object.assign(translations,{"Final pricing is determined after reviewing the welding process, required parts, work environment and integration requirements.":"\u064a\u064f\u062d\u062f\u0651\u064e\u062f \u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0646\u0647\u0627\u0626\u064a \u0628\u0639\u062f \u0645\u0631\u0627\u062c\u0639\u0629 \u0646\u0648\u0639 \u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u0627\u0644\u0642\u0637\u0639 \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629 \u0648\u0628\u064a\u0626\u0629 \u0627\u0644\u0639\u0645\u0644 \u0648\u0645\u062a\u0637\u0644\u0628\u0627\u062a \u0627\u0644\u0631\u0628\u0637."});Object.assign(translations,{"Final pricing is determined after reviewing the welding process, required parts, work environment and integration requirements.":"\u064a\u064f\u062d\u062f\u0651\u064e\u062f \u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0646\u0647\u0627\u0626\u064a \u0628\u0639\u062f \u0645\u0631\u0627\u062c\u0639\u0629 \u0646\u0648\u0639 \u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u0627\u0644\u0642\u0637\u0639 \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629 \u0648\u0628\u064a\u0626\u0629 \u0627\u0644\u0639\u0645\u0644 \u0648\u0645\u062a\u0637\u0644\u0628\u0627\u062a \u0627\u0644\u0631\u0628\u0637.","Final pricing depends on the robotic arm, welding process, welding source, required tooling, work area, safety requirements and on-site integration.":"\u064a\u0639\u062a\u0645\u062f \u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0646\u0647\u0627\u0626\u064a \u0639\u0644\u0649 \u0646\u0648\u0639 \u0627\u0644\u0630\u0631\u0627\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0648\u0646\u0648\u0639 \u0639\u0645\u0644\u064a\u0629 \u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u0645\u0635\u062f\u0631 \u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u0627\u0644\u0623\u062f\u0648\u0627\u062a \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629 \u0648\u062d\u062c\u0645 \u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u0639\u0645\u0644 \u0648\u0645\u062a\u0637\u0644\u0628\u0627\u062a \u0627\u0644\u0633\u0644\u0627\u0645\u0629 \u0648\u0627\u0644\u0631\u0628\u0637 \u0641\u064a \u0627\u0644\u0645\u0648\u0642\u0639."});export function LanguageToggle(){
   const [arabic,setArabic]=useState(false);
   useEffect(()=>{
     const saved=localStorage.getItem('dara-language')==='ar';
-    setArabic(saved);
-    applyLanguage(saved);
+    const initialLanguageTimer=window.setTimeout(()=>{
+      setArabic(saved);
+      applyLanguage(saved);
+    },0);
     let translating=false;
     let queued=false;
     const observer=new MutationObserver(()=>{
@@ -172,7 +197,10 @@ Object.assign(translations,{"Coffee equipment integration":"\u0625\u0645\u0643\u
       },0);
     });
     observer.observe(document.body,{childList:true,subtree:true});
-    return ()=>observer.disconnect();
+    return ()=>{
+      window.clearTimeout(initialLanguageTimer);
+      observer.disconnect();
+    };
   },[]);
   function toggle(){
     const next=!arabic;
