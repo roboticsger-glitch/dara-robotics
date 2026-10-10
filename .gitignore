@@ -5,6 +5,7 @@ node_modules
 .vercel
 .DS_Store
 npm-debug.log*
+tmp/
 
 # Local runtime and build artifacts
 *.log

@@ -1,4 +1,40 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-function serverDb(){const u=process.env.NEXT_PUBLIC_SUPABASE_URL,k=process.env.SUPABASE_SERVICE_ROLE_KEY;if(!u||!k)return null;return createClient(u,k,{auth:{persistSession:false}})}
-export async function POST(req:Request){try{const b=await req.json();if(!b.name||!b.email||!b.message)return NextResponse.json({error:"Name, email and message are required."},{status:400});const db=serverDb();if(!db)return NextResponse.json({message:"Demo mode: connect Supabase to store contact messages."});const {error}=await db.from("contact_messages").insert({name:b.name,email:b.email,subject:b.subject||null,message:b.message,status:"new"});if(error)throw error;return NextResponse.json({message:"Thanks — your message has been received."})}catch(e){return NextResponse.json({error:e instanceof Error?e.message:"Could not send message"},{status:500})}}
+import { sendEnquiryEmail } from "@/lib/sendEnquiryEmail";
+
+function serverDb() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    if (!body.name || !body.email || !body.message) {
+      return NextResponse.json({ error: "Name, email and message are required." }, { status: 400 });
+    }
+
+    await sendEnquiryEmail({
+      subject: `Contact enquiry from ${body.name}`,
+      customerEmail: body.email,
+      fields: [
+        { label: "Name", value: body.name },
+        { label: "Email", value: body.email },
+        { label: "Subject", value: body.subject },
+        { label: "Message", value: body.message },
+      ],
+    });
+
+    const db = serverDb();
+    if (db) {
+      const { error } = await db.from("contact_messages").insert({ name: body.name, email: body.email, subject: body.subject || null, message: body.message, status: "new" });
+      if (error) console.error("Could not store contact enquiry in Supabase", error);
+    }
+
+    return NextResponse.json({ message: "Thanks — your message has been received." });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : "Could not send message." }, { status: 500 });
+  }
+}

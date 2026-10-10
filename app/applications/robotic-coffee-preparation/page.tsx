@@ -19,7 +19,7 @@ export default function RoboticCoffeePreparationPage() {
     <section className="product-display-page">
       <div className="container product-display-grid">
         <div className="product-display-media">
-          <MediaGallery items={[{ type: "image", url: "/robotic-arms/coffee-new-1.png", alt: "Coffee robotic arm view 1" }, { type: "image", url: "/robotic-arms/coffee-new-2.png", alt: "Coffee robotic arm view 2" }, { type: "image", url: "/robotic-arms/coffee-new-3.png", alt: "Coffee robotic arm view 3" }, { type: "image", url: "/robotic-arms/coffee-new-4.png", alt: "Coffee robotic arm view 4" }]} />
+          <MediaGallery items={[{ type: "image", url: "/robotic-arms/coffee-dara-1.png", alt: "Coffee robotic arm view 1" }, { type: "image", url: "/robotic-arms/coffee-dara-2.png", alt: "Coffee robotic arm view 2" }, { type: "image", url: "/robotic-arms/coffee-dara-3.png", alt: "Coffee robotic arm view 3" }, { type: "image", url: "/robotic-arms/coffee-dara-4.png", alt: "Coffee robotic arm view 4" }]} />
         </div>
         <div className="product-display-details">
           

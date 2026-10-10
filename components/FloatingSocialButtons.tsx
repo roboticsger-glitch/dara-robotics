@@ -11,7 +11,7 @@ function WhatsAppIcon() {
 export function FloatingSocialButtons() {
   return (
     <div className="floating-social-buttons" aria-label="Social contact links">
-      <a className="floating-social-button floating-social-whatsapp" href="https://wa.me/4915563485363" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp" title="WhatsApp">
+      <a className="floating-social-button floating-social-whatsapp" href="https://wa.me/966555261634" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp" title="WhatsApp">
         <WhatsAppIcon />
       </a>
       <a className="floating-social-button floating-social-instagram" href="https://www.instagram.com/roboticsger2026/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" title="Instagram">

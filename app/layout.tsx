@@ -6,10 +6,14 @@ import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
 
 export const metadata: Metadata = {
   title: { default: "Dara Robotics | Robotics & Automation", template: "%s | Dara Robotics" },
-  description: "Robotics, automation, rental, integration and support solutions for businesses.",
+  description: "Robotics, automation, integration and support solutions for businesses.",
+  icons: {
+    icon: "/dara-favicon-transparent.png",
+    shortcut: "/dara-favicon-transparent.png",
+    apple: "/dara-favicon-transparent.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" dir="ltr"><body><Header/><main>{children}</main><Footer/><FloatingSocialButtons/></body></html>;
 }
-
