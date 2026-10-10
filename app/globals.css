@@ -174,6 +174,11 @@ html,body{max-width:100%;overflow-x:clip}
 
 /* Homepage services and CTA use the Dara navy, cyan and gold brand palette. */
 .home-services{background:linear-gradient(145deg,#f5fbfe 0%,#fff 62%,#edf8fc 100%)}
+.home-services .split{align-items:stretch}
+.home-services .split>div{height:100%}
+.home-services .split>div:first-child{display:flex;flex-direction:column;padding:34px;border:1px solid #d5edf7;border-radius:24px;background:rgba(255,255,255,.92);box-shadow:0 18px 42px rgba(7,52,78,.08)}
+.home-services .split>div:first-child .text-link.large{margin-top:auto;padding-top:24px}
+@media(max-width:620px){.home-services .split>div:first-child{padding:26px 22px}}
 .home-services .eyebrow{color:#008ec7}
 .home-services .service-list>div{padding:14px 16px;border:1px solid #d5edf7;border-radius:14px;background:rgba(255,255,255,.8)}
 .home-services .service-list svg{color:#00aef0}
@@ -216,6 +221,23 @@ html[dir="rtl"] .home-services .process-step>div{text-align:right}
 .contact-page-section .form-message.error{border:1px solid #f0c8c8;background:#fff3f3;color:#8e3030}
 .quote-page-section .form-card{border-top:4px solid #d39f30}
 html[dir="rtl"] .contact-page-section{text-align:right}
+html[dir="rtl"] .home-services .eyebrow{font-size:20px;line-height:1.4;letter-spacing:0}
+html[dir="rtl"] .home-industries-heading .eyebrow{font-size:20px;line-height:1.4;letter-spacing:0}
+.robotic-arms-heading .highlight-heading{position:relative;display:inline-block;width:auto;padding:16px 32px;border:1px solid #9dddf4;border-radius:18px;background:linear-gradient(135deg,#f2fbff 0%,#fff 65%);box-shadow:0 14px 34px rgba(8,90,130,.1);color:#0b2a4a}
+.robotic-arms-heading .highlight-heading:before{content:"";position:absolute;top:-1px;right:28px;width:74px;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#00aef0,#d39f30)}
+html[dir="rtl"] .robotic-arms-heading .highlight-heading{padding:16px 34px;letter-spacing:0}
+html[dir="rtl"] .robotic-arms-heading .highlight-heading:before{right:auto;left:28px}
+@media(max-width:620px){.robotic-arms-heading .highlight-heading{padding:13px 20px;border-radius:14px}}
+
+/* Place slideshow titles in a separate caption below each image. */
+.home-showcase-slide{display:flex;flex-direction:column}
+.home-showcase-media{position:relative;display:block;flex:1;min-height:0;overflow:hidden}
+.home-showcase-media>img{object-fit:cover;transition:transform 4.8s ease}
+.home-showcase-slide[aria-hidden="false"] .home-showcase-media>img{transform:scale(1.035)}
+.home-showcase .home-media-label{position:relative;left:auto;right:auto;bottom:auto;flex:none;min-height:94px;border:0;border-top:1px solid #d5edf7;border-radius:0;background:#fff;box-shadow:none;backdrop-filter:none}
+.home-showcase-arrow{top:calc((100% - 94px)/2)}
+@media(prefers-reduced-motion:reduce){.home-showcase-media>img{transition:none}}
+@media(max-width:620px){.home-showcase-arrow{top:calc((100% - 80px)/2)}}
 .home-cta-section{background:#f5fbfe}
 .home-cta{position:relative;overflow:hidden;border:1px solid rgba(69,201,245,.32);background:linear-gradient(125deg,#071824 0%,#0b2a4a 68%,#0c4162 100%);box-shadow:0 24px 60px rgba(7,32,50,.22)}
 .home-cta:after{content:"";position:absolute;width:240px;height:240px;left:-90px;bottom:-150px;border-radius:50%;background:rgba(211,159,48,.2)}

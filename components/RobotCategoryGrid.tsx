@@ -41,12 +41,12 @@ function CategoryCardMedia({ card }: { card: RobotCategoryCard }) {
   );
 }
 
-export function RobotCategoryGrid({ heading, cards }: { heading: string; cards: RobotCategoryCard[] }) {
+export function RobotCategoryGrid({ heading, cards, highlightHeading = false }: { heading: string; cards: RobotCategoryCard[]; highlightHeading?: boolean }) {
   return (
     <section className="section robotic-arms-section">
       <div className="container">
         <div className="section-heading robotic-arms-heading">
-          <h2>{heading}</h2>
+          <h2 className={highlightHeading ? "highlight-heading" : undefined}>{heading}</h2>
         </div>
         <div className="arm-types-grid">
           {cards.map((card) => (

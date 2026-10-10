@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const slides = [
   { title: "Healthcare Assistant Robots", href: "/robots/healthcare-assistant-robots", image: "/products/medical-delivery-new-1.png" },
-  { title: "Robotic Arms", href: "/robots/robotic-arms", image: "/robotic-arms/coffee-dara-1.png" },
+  { title: "Robotic Arms", href: "/robots/robotic-arms", image: "/robotic-arms/coffee-banner-neutral.png" },
   { title: "Hotel Service Robots", href: "/robots/hotel-service-robots", image: "/products/hotel-delivery-new-1.png" },
   { title: "Autonomous Cleaning Robots", href: "/robots/autonomous-cleaning-robots", image: "/products/autonomous-scrubbing-robot-preview.png" },
   { title: "Reception & Guest Experience Robots", href: "/robots/reception-guest-experience-robots", image: "/products/welcome-reception-robot-preview.png" },
@@ -30,7 +30,7 @@ export function HomeHeroShowcase() {
       <div className="home-showcase-track" style={{ transform: `translateX(-${active * 100}%)` }}>
         {slides.map((slide, index) => (
           <Link className="home-showcase-slide" href={slide.href} key={slide.title} aria-hidden={index !== active} tabIndex={index === active ? 0 : -1}>
-            <Image src={slide.image} alt={slide.title} fill priority={index === 0} sizes="(max-width: 950px) 100vw, 48vw" />
+            <span className="home-showcase-media"><Image src={slide.image} alt={slide.title} fill priority={index === 0} sizes="(max-width: 950px) 100vw, 48vw" /></span>
             <span className="home-media-label"><b>{slide.title}</b><ArrowRight size={18}/></span>
           </Link>
         ))}
