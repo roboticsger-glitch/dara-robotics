@@ -68,21 +68,11 @@
 .nav-dropdown-menu b{font-size:15px;font-weight:500;white-space:normal}
 .nav-dropdown-menu a{align-items:center;text-align:center}
 .nav-dropdown-menu a:not(.nav-dropdown-all){flex-direction:row;justify-content:center;gap:8px}
-.nav-dropdown-emoji{font-size:18px;line-height:1}
 .nav-dropdown-menu .nav-dropdown-all{justify-content:center;gap:10px}
 .nav-dropdown-menu .nav-dropdown-all{font-weight:500}
 .nav-dropdown-menu a:not(.nav-dropdown-all){display:grid;grid-template-columns:minmax(0,1fr) 28px;flex-direction:initial;justify-content:initial;gap:8px}
 .nav-dropdown-menu a:not(.nav-dropdown-all) b{text-align:center}
 .nav-dropdown-icon{justify-self:center;align-self:center;color:#0b2a4a}
-.robotic-arm-icon{font-size:22px;line-height:1}
-.healthcare-heart-icon{font-size:20px;line-height:1}
-@keyframes robotic-arm-motion{
-  0%,100%{transform:rotate(0deg)}
-  35%{transform:rotate(-9deg)}
-  70%{transform:rotate(5deg)}
-}
-.nav-dropdown-menu a:hover .robotic-arm-icon{transform-origin:50% 88%;animation:robotic-arm-motion .8s ease-in-out}
-@media(prefers-reduced-motion:reduce){.nav-dropdown-menu a:hover .robotic-arm-icon{animation:none}}
 @media(max-width:950px){
   .nav-dropdown::after{display:none}
   .nav-dropdown{width:100%;flex-direction:column}

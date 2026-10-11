@@ -50,7 +50,7 @@ Object.assign(translations,{
 "Automated coffee and beverage preparation for cafés, hotels, lounges, events, and hospitality spaces.":"تحضير آلي للقهوة والمشروبات للمقاهي والفنادق والصالات والفعاليات ومساحات الضيافة.",
 "Discuss Your Coffee Automation Project":"نناقش مشروع أتمتة القهوة",
 "THE WORKFLOW":"آلية العمل",
-"How It Works":"كيف يعمل الحل",
+"How It Works":"كيف يعمل النظام",
 "Cup Positioning":"توضيع الكوب",
 "The robotic system positions or identifies the cup for preparation.":"يقوم النظام بتوضيع الكوب أو تحديد موقعه للتحضير.",
 "The robotic arm interacts with the configured coffee equipment.":"يتفاعل الذراع الروبوتي مع معدات القهوة المجهزة.",
@@ -68,7 +68,7 @@ Object.assign(translations,{
 "Premium Hospitality Spaces":"مساحات الضيافة الفاخرة",
 "CONFIGURATION AREAS":"مجالات التخصيص",
 "Built Around Your Operation":"مصمم حول طريقة عملك",
-"Every location and workflow is different. The robotic solution can be configured around the equipment, layout, and service experience required for your application.":"كل موقع وآلية عمل مختلفان. يمكن تخصيص الحل الروبوتي وفق المعدات والتوزيع وتجربة الخدمة المطلوبة لتطبيقك.",
+"Every location and workflow is different. The robotic solution can be configured around the equipment, layout, and service experience required for your application.":"كل موقع وآلية عمل مختلفان. يمكن تخصيص النظام الروبوتي وفق المعدات والتوزيع وتجربة الخدمة المطلوبة لتطبيقك.",
 "Robotic Arm Configuration":"تهيئة الذراع الروبوتي",
 "Coffee Equipment Integration":"ربط معدات القهوة",
 "Cup Handling":"مناولة الأكواب",
@@ -98,13 +98,13 @@ Object.assign(translations,{
 "Programmed movements can be reviewed and refined for the application.":"يمكن مراجعة الحركات المبرمجة وتحسينها وفق التطبيق.",
 "Create a visible, memorable service moment for guests.":"إنشاء تجربة خدمة مميزة ولافتة للضيوف.",
 "Help reduce repetitive serving movements for the team.":"المساعدة في تقليل حركات التقديم المتكررة للفريق.",
-"Plan the solution around the available counter and service space.":"تخطيط الحل وفق مساحة الكاونتر والخدمة المتاحة.",
+"Plan the solution around the available counter and service space.":"تخطيط النظام وفق مساحة الكاونتر والخدمة المتاحة.",
 "Build a workflow around the equipment and service experience you need.":"بناء آلية عمل حول المعدات وتجربة الخدمة المطلوبة.",
 "COFFEE SERVICE IN MOTION":"خدمة قهوة بحركة",
 "A visible service experience for modern hospitality.":"تجربة خدمة لافتة للضيافة الحديثة.",
 "START A CONVERSATION":"لنبدأ النقاش",
 "Planning a Robotic Coffee Setup?":"تخطط لتجهيز قهوة روبوتي؟",
-"Tell us about your location, equipment, and service requirements. We can help define a robotic-arm solution around your application.":"أخبرنا عن موقعك ومعداتك ومتطلبات الخدمة. يمكننا مساعدتك في تحديد حل للذراع الروبوتي وفق تطبيقك.",
+"Tell us about your location, equipment, and service requirements. We can help define a robotic-arm solution around your application.":"أخبرنا عن موقعك ومعداتك ومتطلبات الخدمة. يمكننا مساعدتك في تحديد نظام للذراع الروبوتي وفق تطبيقك.",
 "Discuss Your Project":"نناقش مشروعك"
 });
 Object.assign(translations,{"A robotic-arm solution for coffee preparation and serving in cafés, hotels, lounges and hospitality environments.":"\u062d\u0644 بالذراع \u0627ل\u0631\u0648\u0628و\u062a\u064a\u0629 \u0644\u062aحضير \u0648تقديم \u0627ل\u0642ه\u0648\u0629 \u0641ي \u0627ل\u0645قاه\u064a \u0648الفنادق \u0648\u0627ل\u0635\u0627لات \u0648\u0628\u064aئات \u0627ل\u0636يافة.","Configurable for your workspace":"\u0642\u0627بل \u0644لتخ\u0635\u064a\u0635 \u0648\u0641\u0642 \u0645\u0633\u0627\u062d\u0629 \u0639\u0645\u0644\u0643","Custom end-of-arm tooling":"\u0623\u062f\u0648\u0627\u062a \u0646\u0647\u0627\u064a\u0629 \u0630\u0631\u0627\u0639 \u0645\u062e\u0635\u0635\u0629","Coffee equipment integration":"\u062a\u0643\u0627\u0645\u0644 \u0645عدات \u0627ل\u0642\u0647و\u0629","Installation options available depending on the project":"\u062e\u064a\u0627\u0631\u0627\u062a \u062a\u0631\u0643\u064a\u0628 \u0645\u062a\u0627\u062d\u0629 \u0648فق \u0645\u062aطلبات \u0627\u0644\u0645\u0634\u0631\u0648\u0639","Final configuration and pricing depend on the selected robotic arm, tooling, integration and project requirements.":"\u064a\u0639\u062aمد \u0627\u0644ت\u0636\u0628\u064aط \u0627\u0644ن\u0647\u0627ئ\u064a \u0648السعر \u0639لى \u0627\u0644ذ\u0631\u0627ع \u0627لروبوت\u064a \u0648ال\u0623دوات \u0648الت\u0643امل \u0648\u0645\u062aطلبات \u0627لم\u0634\u0631وع","Contact us to purchase":"\u062a\u0648اصل \u0645عنا \u0644\u0644ش\u0631اء","Request a quotation":"\u0627\u0637\u0644ب \u0639رض \u0633عر"});
@@ -121,7 +121,7 @@ Object.assign(translations,{
 "Guest-facing service workflow":"آلية خدمة موجهة للضيوف",
 "Custom tooling options":"خيارات أدوات مخصصة",
 "Project-based integration":"ربط وتشغيل وفق متطلبات المشروع",
-"A robotic-arm solution configured around your specific task, workspace and workflow.":"حل بالذراع الروبوتية مهيأ وفق مهمتك ومساحة عملك وآلية التشغيل الخاصة بك.",
+"A robotic-arm solution configured around your specific task, workspace and workflow.":"نظام بالذراع الروبوتية مهيأ وفق مهمتك ومساحة عملك وآلية التشغيل الخاصة بك.",
 "Configuration around your task":"تهيئة وفق مهمتك",
 "Workspace and equipment planning":"تخطيط مساحة العمل والمعدات",
 "Project requirements review":"مراجعة متطلبات المشروع"

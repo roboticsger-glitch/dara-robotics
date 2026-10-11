@@ -2,29 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, MessageCircle, ChevronDown, Hotel, Sparkles, Hand } from "lucide-react";
+import { Menu, X, MessageCircle, ChevronDown, Bot, HeartPulse, Hotel, Brush, ConciergeBell } from "lucide-react";
 import { useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import { LanguageToggle } from "@/components/LanguageToggle";
-
-function RoboticArmIcon(props: SVGProps<SVGSVGElement>) {
-  return <span className={props.className} aria-hidden="true">🦾</span>;
-}
-
-function HealthcareHeartIcon(props: SVGProps<SVGSVGElement>) {
-  return <span className={props.className} aria-hidden="true">❤️</span>;
-}
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [robotsOpen, setRobotsOpen] = useState(false);
   const links = [["Robots", "/robots"], ["Solutions", "/solutions"], ["Services", "/services"], ["About", "/about"], ["Contact", "/contact"]];
   const robotCategories: Array<[ComponentType<SVGProps<SVGSVGElement>>, string]> = [
-    [RoboticArmIcon, "Robotic Arms"],
-    [HealthcareHeartIcon, "Healthcare Assistant Robots"],
+    [Bot, "Robotic Arms"],
+    [HeartPulse, "Healthcare Assistant Robots"],
     [Hotel, "Hotel Service Robots"],
-    [Sparkles, "Autonomous Cleaning Robots"],
-    [Hand, "Reception & Guest Experience Robots"],
+    [Brush, "Autonomous Cleaning Robots"],
+    [ConciergeBell, "Reception & Guest Experience Robots"],
   ];
   return (
     <header className="site-header">
@@ -32,7 +24,7 @@ export function Header() {
         <Link className="brand" href="/" onClick={() => setOpen(false)}><Image className="brand-logo" src="/dara-robotics-logo.png" alt="Dara Robotics" width={580} height={288} priority /></Link>
         <nav className={"nav-links " + (open ? "open" : "")}>
           <div className={"nav-dropdown " + (robotsOpen ? "open" : "")}>
-            <button className="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded={robotsOpen} onClick={() => setRobotsOpen(false)}>
+            <button className="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded={robotsOpen} onClick={() => setRobotsOpen((isOpen) => !isOpen)}>
               Robots <ChevronDown size={16} aria-hidden="true" />
             </button>
             <div className="nav-dropdown-menu">
@@ -46,7 +38,7 @@ export function Header() {
                   "Reception & Guest Experience Robots": "/robots/reception-guest-experience-robots",
                 };
                 const href = categoryRoutes[label] ?? "/robots";
-                return <Link key={label} href={href} onClick={() => { setOpen(false); setRobotsOpen(false); }}><b>{label}</b><Icon className={"nav-dropdown-icon " + (label === "Robotic Arms" ? "robotic-arm-icon" : "")} aria-hidden="true" /></Link>;
+                return <Link key={label} href={href} onClick={() => { setOpen(false); setRobotsOpen(false); }}><b>{label}</b><Icon className="nav-dropdown-icon" aria-hidden="true" /></Link>;
               })}
             </div>
           </div>
