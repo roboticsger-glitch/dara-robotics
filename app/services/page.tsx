@@ -1,5 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Boxes, CalendarClock, Cog, GraduationCap, Headphones, MapPinned, PackageSearch, Wrench } from "lucide-react";
-export const metadata={title:"Robotics Services"};
-const services=[[PackageSearch,"Robot sourcing","Manufacturer selection, technical comparison and commercial sourcing."],[MapPinned,"Site assessment","Workflow observation, mapping, coverage and deployment planning."],[Cog,"Integration","Configuration, APIs, sensors, lifts, doors, POS or workflow interfaces where supported."],[GraduationCap,"Training","Operator onboarding and practical team training for daily use."],[Wrench,"Maintenance","Preventive maintenance, troubleshooting and on-site service plans."],[Boxes,"Spare parts","Consumables, batteries and replacement-part planning."],[Headphones,"Remote support","Fault triage, monitoring and remote technical assistance."],[CalendarClock,"Rental & RaaS","Event rental and recurring Robot-as-a-Service commercial models."]];
-export default function Services(){return <><section className="page-hero"><div className="container"><span className="eyebrow">SERVICES</span><h1>From first demo to long-term uptime.</h1><p>The value is not only the robot. It is getting the robot successfully into the customer’s operation.</p></div></section><section className="section"><div className="container"><div className="service-grid">{services.map(([Icon,t,d],i)=>{const I=Icon as typeof Wrench;return <article className="service-card" key={String(t)}><span className="service-num">0{i+1}</span><I/><h3>{String(t)}</h3><p>{String(d)}</p></article>})}</div><div className="center top-gap"><Link className="button" href="/request-quote">Discuss your project <ArrowRight size={16}/></Link></div></div></section></>}
+import { ArrowRight } from "lucide-react";
+import { services } from "@/lib/offerings";
+
+export const metadata = { title: "Robotics Services" };
+
+export default function Services() {
+  return <>
+    <section className="section overview-section"><div className="container">
+      <div className="overview-heading"><span className="eyebrow">SERVICES</span><h1>Support from purchase to daily operation.</h1><p>We help you choose and buy the right robot, configure it for your site, train your team and support the rollout.</p></div>
+      <div className="overview-grid">{services.map(service => <article className="overview-card service-summary" key={service.slug}>
+        <div className="overview-card-media"><Image src={service.image} alt="" fill sizes="(max-width: 620px) 100vw, (max-width: 950px) 50vw, 25vw" /></div>
+        <div className="overview-card-copy"><h2>{service.title}</h2><p>{service.summary}</p></div>
+      </article>)}</div>
+      <div className="services-catalogue-link"><Link className="button" href="/robots">Explore our robots <ArrowRight size={16}/></Link></div>
+    </div></section>
+  </>;
+}

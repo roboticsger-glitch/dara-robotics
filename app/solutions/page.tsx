@@ -1,5 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Building2, Factory, HeartPulse, Hotel, PackageOpen, Shield, Sun, Utensils } from "lucide-react";
-export const metadata={title:"Industry Solutions"};
-const items=[[Utensils,"Restaurants & Cafés","Food delivery, guest interaction and autonomous cleaning."],[Hotel,"Hotels & Hospitality","Room delivery, amenities, cleaning and reception experiences."],[Building2,"Facilities & Malls","Large-area cleaning, patrol and customer-service automation."],[PackageOpen,"Warehouses & Logistics","AMRs, carts and autonomous internal material transport."],[Factory,"Manufacturing","Cobots, palletizing, machine tending, inspection and intralogistics."],[HeartPulse,"Healthcare","Cleaning and internal delivery workflows for controlled environments."],[Sun,"Solar & Energy","Panel cleaning, remote inspection and sensor-carrying mobile platforms."],[Shield,"Security & Inspection","Quadrupeds and mobile sensor platforms for hazardous or repetitive patrols."]];
-export default function Solutions(){return <><section className="page-hero"><div className="container"><span className="eyebrow">INDUSTRY SOLUTIONS</span><h1>Automation designed around your workflow.</h1><p>We translate operational pain points into a deployable robot solution and service model.</p></div></section><section className="section"><div className="container"><div className="industry-grid light">{items.map(([Icon,t,d])=>{const I=Icon as typeof Hotel;return <div className="industry-card" key={String(t)}><I/><h3>{String(t)}</h3><p>{String(d)}</p><Link className="text-link" href={`/request-quote?industry=${encodeURIComponent(String(t))}`}>Discuss this solution <ArrowRight size={15}/></Link></div>})}</div></div></section></>}
+import { ArrowRight, BrainCircuit } from "lucide-react";
+
+export const metadata = { title: "Robotics & AI Solutions" };
+
+export default function Solutions() {
+  return <>
+    <section className="section overview-section"><div className="container">
+      <div className="overview-heading"><span className="eyebrow">Solutions</span><h1>Robotics and AI for your business.</h1><p>Explore robots for physical tasks and AI solutions for your data, systems and workflows.</p></div>
+      <div className="overview-grid solution-paths">
+        <Link className="overview-card" href="/robots">
+          <div className="overview-card-media"><Image src="/solutions/manufacturing.png" alt="" fill sizes="(max-width: 620px) 100vw, 50vw" priority /></div>
+          <div className="overview-card-copy"><h2>Robots</h2><p>Find robots for hospitality, healthcare, cleaning, reception and production.</p><span>Explore our robots <ArrowRight size={16}/></span></div>
+        </Link>
+        <Link className="overview-card" href="/solutions/ai">
+          <div className="overview-card-media ai-solution-visual"><BrainCircuit size={120} strokeWidth={1} aria-hidden="true" /></div>
+          <div className="overview-card-copy"><h2>AI Solutions</h2><p>Put your data to work with language models, machine vision and AI integration.</p><span>Explore AI solutions <ArrowRight size={16}/></span></div>
+        </Link>
+      </div>
+    </div></section>
+  </>;
+}
