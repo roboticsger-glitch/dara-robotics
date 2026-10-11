@@ -1,5 +1,13 @@
-import { ProductCard } from "@/components/ProductCard";
-import { getProducts } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
 
-export const metadata = { title: "Robot Catalogue" };
-export default async function Robots(){ const products=await getProducts(); return <><section className="page-hero"><div className="container"><span className="eyebrow">ROBOT CATALOGUE</span><h1>Robots for real business operations.</h1><p>Purchase or deploy as a managed service. Every robot can be packaged with integration, training and support.</p></div></section><section className="section"><div className="container"><div className="catalog-note"><b>Supplier-ready catalogue:</b> These demo product names are placeholders. Replace them in the admin/database with approved manufacturer models and your commercial terms.</div><div className="product-grid">{products.map(p=><ProductCard key={p.id} product={p}/>)}</div></div></section></> }
+export const metadata = { title: "Robots" };
+const robotCategories = [
+  { title: "Robotic Arms", href: "/robots/robotic-arms", image: "/robotic-arms/coffee-category-clean.png" },
+  { title: "Healthcare Assistant Robots", href: "/robots/healthcare-assistant-robots", image: "/products/medical-delivery-new-1.png" },
+  { title: "Hotel Service Robots", href: "/robots/hotel-service-robots", image: "/products/hotel-delivery-new-1.png" },
+  { title: "Autonomous Cleaning Robots", href: "/robots/autonomous-cleaning-robots", image: "/products/autonomous-scrubbing-robot-preview.png" },
+  { title: "Reception & Guest Experience Robots", href: "/robots/reception-guest-experience-robots", image: "/products/welcome-reception-robot-preview.png" },
+];
+
+ export default function Robots(){ return <section className="section overview-section"><div className="container"><div className="overview-heading robot-overview-heading"><span className="eyebrow">ROBOTS</span><h1>Robots that fit the way you work.</h1></div><div className="overview-grid robot-category-overview">{robotCategories.map(category=><Link className={`overview-card${category.title === "Autonomous Cleaning Robots" ? " cleaning-category-card" : ""}`} key={category.href} href={category.href}><div className="overview-card-media"><Image src={category.image} alt="" fill sizes="(max-width: 620px) 100vw, (max-width: 1100px) 50vw, 20vw" /></div><div className="overview-card-copy"><h2>{category.title}</h2></div></Link>)}</div></div></section> }
