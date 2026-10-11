@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { arabicTranslations } from "@/lib/arTranslations";
+import { servicesSolutionsArabic } from "@/lib/arServicesSolutions";
 const translations: Record<string,string>={Robots:"الروبوتات",Solutions:"الحلول",Services:"الخدمات",About:"من نحن",Contact:"اتصل بنا","Request a Quote":"اطلب عرض سعر","Explore Robots":"استكشف الروبوتات",Purchase:"شراء","Local Integration":"تشغيل ودعم محلي",Hospitality:"الضيافة",Facilities:"إدارة المرافق",Logistics:"الخدمات اللوجستية",Manufacturing:"التصنيع",Inspection:"الفحص والمراقبة",INDUSTRIES:"القطاعات",SERVICES:"الخدمات","ROBOT CATALOGUE":"كتالوج الروبوتات"};
 Object.assign(translations,{"View All Robots":"\u0639\u0631\u0636 \u062c\u0645\u064a\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u0627\u062a","Robotic Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Healthcare Assistant Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u0631\u0639\u0627\u064a\u0629 \u0648\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629 \u0627\u0644\u0635\u062d\u064a\u0629","Hotel Service Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0641\u0646\u0627\u062f\u0642 \u0648\u0627\u0644\u0636\u064a\u0627\u0641\u0629","Autonomous Cleaning Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u062a\u0646\u0638\u064a\u0641 \u0627\u0644\u0630\u0627\u062a\u064a","Reception & Guest Experience Robots":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u0642\u0628\u0627\u0644 \u0648\u062e\u062f\u0645\u0629 \u0627\u0644\u0636\u064a\u0648\u0641"});Object.assign(translations,{"ROBOTIC ARMS":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Choose the right robotic arm.":"\u0627\u062e\u062a\u0631 \u0627\u0644\u0630\u0631\u0627\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a \u0627\u0644\u0645\u0646\u0627\u0633\u0628.","Explore different arm types and find the platform that fits your task, environment and production goals.":"\u0627\u0633\u062a\u0643\u0634\u0641 \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u0623\u0630\u0631\u0639 \u0648\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0646\u0635\u0629 \u0627\u0644\u0645\u0646\u0627\u0633\u0628\u0629 \u0644\u0645\u0647\u0645\u062a\u0643 \u0648\u0628\u064a\u0626\u062a\u0643 \u0648\u0623\u0647\u062f\u0627\u0641 \u0627\u0644\u0625\u0646\u062a\u0627\u062c.","ARM CATEGORIES":"\u0641\u0626\u0627\u062a \u0627\u0644\u0623\u0630\u0631\u0639","Different arms for different jobs.":"\u0623\u0630\u0631\u0639 \u0645\u062e\u062a\u0644\u0641\u0629 \u0644\u0645\u0647\u0627\u0645 \u0645\u062e\u062a\u0644\u0641\u0629.","We help you select the arm, gripper, vision, safety and integration package for your operation.":"\u0646\u0633\u0627\u0639\u062f\u0643 \u0641\u064a \u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0630\u0631\u0627\u0639 \u0648\u0623\u062f\u0627\u0629 \u0627\u0644\u0625\u0645\u0633\u0627\u0643 \u0648\u0627\u0644\u0631\u0624\u064a\u0629 \u0648\u0627\u0644\u0633\u0644\u0627\u0645\u0629 \u0648\u062d\u0632\u0645\u0629 \u0627\u0644\u0631\u0628\u0637 \u0644\u0639\u0645\u0644\u0643.","Collaborative Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u062a\u0639\u0627\u0648\u0646\u064a\u0629","6-Axis Industrial Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0635\u0646\u0627\u0639\u064a\u0629 \u0630\u0627\u062a \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0633\u062f\u0627\u0633\u064a","SCARA Robot Arms":"\u0623\u0630\u0631\u0639 SCARA \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Delta Robot Arms":"\u0623\u0630\u0631\u0639 \u062f\u064a\u0644\u062a\u0627 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Cartesian Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0627\u0644\u062f\u064a\u0643\u0627\u0631\u062a\u064a\u0629","Welding Robot Arms":"\u0623\u0630\u0631\u0639 \u0627\u0644\u0644\u062d\u0627\u0645 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Educational Robot Arms":"\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629","Hospitality Robot Arms":"\u0623\u0630\u0631\u0639 \u0627\u0644\u0636\u064a\u0627\u0641\u0629 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Safe, flexible cobots for people-focused tasks, assembly and service workflows.":"\u0631\u0648\u0628\u0648\u062a\u0627\u062a \u062a\u0639\u0627\u0648\u0646\u064a\u0629 \u0622\u0645\u0646\u0629 \u0648\u0645\u0631\u0646\u0629 \u0644\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u062a\u0641\u0627\u0639\u0644\u064a\u0629 \u0648\u0627\u0644\u062a\u0631\u0643\u064a\u0628 \u0648\u0627\u0644\u062e\u062f\u0645\u0627\u062a.","Discuss this arm":"\u0646\u0646\u0627\u0642\u0634 \u0647\u0630\u0627 \u0627\u0644\u0630\u0631\u0627\u0639"});Object.assign(translations,{
 "High-reach, high-repeatability arms for manufacturing, welding and machine tending.":"\u0623\u0630\u0631\u0639 \u0630\u0627\u062a \u0645\u062f\u0649 \u062a\u0634\u063a\u064a\u0644 \u0648\u062a\u0643\u0631\u0627\u0631\u064a\u0629 \u0639\u0627\u0644\u064a\u0629 \u0644\u0644\u062a\u0635\u0646\u064a\u0639 \u0648\u0627\u0644\u0644\u062d\u0627\u0645 \u0648\u062a\u063a\u0630\u064a\u0629 \u0627\u0644\u0622\u0644\u0627\u062a.",
@@ -38,7 +39,7 @@ Object.assign(translations,{
 "To be confirmed":"سيتم التأكيد",
 "Robotics, automation and AI solutions for businesses.":"حلول الروبوتات والأتمتة والذكاء الاصطناعي للشركات.",
 "Robots shown on this demo website are representative catalogue concepts. Replace them with your approved supplier models before launch.":"الروبوتات المعروضة في موقع التجربة تمثل مفاهيم تقليدية لكتالوج الروبوتات. يرجى استبدالها بنماذج الموردين المعتمدين قبل الإطلاق.",
-"Built for B2B robotics sales, integration & RaaS.":"مصمم لمبيعات الروبوتات لقطاع الأعمال وخدمات الربط والتشغيل والروبوت كخدمة."
+"Built for B2B robotics sales, rental & RaaS.":"مصمم لبيع الروبوتات لقطاع الأعمال ونماذج الروبوتات كخدمة."
 });
 Object.assign(translations,{"ROBOTIC ARM APPLICATIONS":"\u062a\u0637\u0628\u064a\u0642\u0627\u062a \u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629","Robotic arms for different applications.":"\u0623\u0630\u0631\u0639 \u0631\u0648\u0628\u0648\u062a\u064a\u0629 \u0644\u0645\u062e\u062a\u0644\u0641 \u0627\u0644\u062a\u0637\u0628\u064a\u0642\u0627\u062a.","Choose an application to find the robotic solution that fits your business needs.":"\u0627\u062e\u062a\u0631 \u0645\u062c\u0627\u0644 \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0644\u0644\u062a\u0639\u0631\u0641 \u0639\u0644\u0649 \u0627\u0644\u062d\u0644 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a \u0627\u0644\u0645\u0646\u0627\u0633\u0628 \u0644\u0627\u062d\u062a\u064a\u0627\u062c\u0627\u062a \u0639\u0645\u0644\u0643."});
 Object.assign(translations,{"Advanced robotic arm solutions.":"\u062d\u0644\u0648\u0644 \u0645\u062a\u0642\u062f\u0645\u0629 \u0628\u0627\u0644\u0623\u0630\u0631\u0639 \u0627\u0644\u0631\u0648\u0628\u0648\u062a\u064a\u0629"});
@@ -50,7 +51,7 @@ Object.assign(translations,{
 "Automated coffee and beverage preparation for cafés, hotels, lounges, events, and hospitality spaces.":"تحضير آلي للقهوة والمشروبات للمقاهي والفنادق والصالات والفعاليات ومساحات الضيافة.",
 "Discuss Your Coffee Automation Project":"نناقش مشروع أتمتة القهوة",
 "THE WORKFLOW":"آلية العمل",
-"How It Works":"كيف يعمل النظام",
+"How It Works":"كيف يعمل الحل",
 "Cup Positioning":"توضيع الكوب",
 "The robotic system positions or identifies the cup for preparation.":"يقوم النظام بتوضيع الكوب أو تحديد موقعه للتحضير.",
 "The robotic arm interacts with the configured coffee equipment.":"يتفاعل الذراع الروبوتي مع معدات القهوة المجهزة.",
@@ -68,7 +69,7 @@ Object.assign(translations,{
 "Premium Hospitality Spaces":"مساحات الضيافة الفاخرة",
 "CONFIGURATION AREAS":"مجالات التخصيص",
 "Built Around Your Operation":"مصمم حول طريقة عملك",
-"Every location and workflow is different. The robotic solution can be configured around the equipment, layout, and service experience required for your application.":"كل موقع وآلية عمل مختلفان. يمكن تخصيص النظام الروبوتي وفق المعدات والتوزيع وتجربة الخدمة المطلوبة لتطبيقك.",
+"Every location and workflow is different. The robotic solution can be configured around the equipment, layout, and service experience required for your application.":"كل موقع وآلية عمل مختلفان. يمكن تخصيص الحل الروبوتي وفق المعدات والتوزيع وتجربة الخدمة المطلوبة لتطبيقك.",
 "Robotic Arm Configuration":"تهيئة الذراع الروبوتي",
 "Coffee Equipment Integration":"ربط معدات القهوة",
 "Cup Handling":"مناولة الأكواب",
@@ -98,13 +99,13 @@ Object.assign(translations,{
 "Programmed movements can be reviewed and refined for the application.":"يمكن مراجعة الحركات المبرمجة وتحسينها وفق التطبيق.",
 "Create a visible, memorable service moment for guests.":"إنشاء تجربة خدمة مميزة ولافتة للضيوف.",
 "Help reduce repetitive serving movements for the team.":"المساعدة في تقليل حركات التقديم المتكررة للفريق.",
-"Plan the solution around the available counter and service space.":"تخطيط النظام وفق مساحة الكاونتر والخدمة المتاحة.",
+"Plan the solution around the available counter and service space.":"تخطيط الحل وفق مساحة الكاونتر والخدمة المتاحة.",
 "Build a workflow around the equipment and service experience you need.":"بناء آلية عمل حول المعدات وتجربة الخدمة المطلوبة.",
 "COFFEE SERVICE IN MOTION":"خدمة قهوة بحركة",
 "A visible service experience for modern hospitality.":"تجربة خدمة لافتة للضيافة الحديثة.",
 "START A CONVERSATION":"لنبدأ النقاش",
 "Planning a Robotic Coffee Setup?":"تخطط لتجهيز قهوة روبوتي؟",
-"Tell us about your location, equipment, and service requirements. We can help define a robotic-arm solution around your application.":"أخبرنا عن موقعك ومعداتك ومتطلبات الخدمة. يمكننا مساعدتك في تحديد نظام للذراع الروبوتي وفق تطبيقك.",
+"Tell us about your location, equipment, and service requirements. We can help define a robotic-arm solution around your application.":"أخبرنا عن موقعك ومعداتك ومتطلبات الخدمة. يمكننا مساعدتك في تحديد حل للذراع الروبوتي وفق تطبيقك.",
 "Discuss Your Project":"نناقش مشروعك"
 });
 Object.assign(translations,{"A robotic-arm solution for coffee preparation and serving in cafés, hotels, lounges and hospitality environments.":"\u062d\u0644 بالذراع \u0627ل\u0631\u0648\u0628و\u062a\u064a\u0629 \u0644\u062aحضير \u0648تقديم \u0627ل\u0642ه\u0648\u0629 \u0641ي \u0627ل\u0645قاه\u064a \u0648الفنادق \u0648\u0627ل\u0635\u0627لات \u0648\u0628\u064aئات \u0627ل\u0636يافة.","Configurable for your workspace":"\u0642\u0627بل \u0644لتخ\u0635\u064a\u0635 \u0648\u0641\u0642 \u0645\u0633\u0627\u062d\u0629 \u0639\u0645\u0644\u0643","Custom end-of-arm tooling":"\u0623\u062f\u0648\u0627\u062a \u0646\u0647\u0627\u064a\u0629 \u0630\u0631\u0627\u0639 \u0645\u062e\u0635\u0635\u0629","Coffee equipment integration":"\u062a\u0643\u0627\u0645\u0644 \u0645عدات \u0627ل\u0642\u0647و\u0629","Installation options available depending on the project":"\u062e\u064a\u0627\u0631\u0627\u062a \u062a\u0631\u0643\u064a\u0628 \u0645\u062a\u0627\u062d\u0629 \u0648فق \u0645\u062aطلبات \u0627\u0644\u0645\u0634\u0631\u0648\u0639","Final configuration and pricing depend on the selected robotic arm, tooling, integration and project requirements.":"\u064a\u0639\u062aمد \u0627\u0644ت\u0636\u0628\u064aط \u0627\u0644ن\u0647\u0627ئ\u064a \u0648السعر \u0639لى \u0627\u0644ذ\u0631\u0627ع \u0627لروبوت\u064a \u0648ال\u0623دوات \u0648الت\u0643امل \u0648\u0645\u062aطلبات \u0627لم\u0634\u0631وع","Contact us to purchase":"\u062a\u0648اصل \u0645عنا \u0644\u0644ش\u0631اء","Request a quotation":"\u0627\u0637\u0644ب \u0639رض \u0633عر"});
@@ -115,13 +116,13 @@ Object.assign(translations,{
 "Repeatable welding movements":"حركات لحام قابلة للتكرار",
 "Configured tooling options":"خيارات أدوات مهيأة حسب التطبيق",
 "Workspace and safety planning":"تخطيط مساحة العمل ومتطلبات السلامة",
-"Integration based on project requirements":"ربط وتشغيل وفق متطلبات المشروع",
+"Integration based on project requirements":"ربط وتجهيز وفق متطلبات المشروع",
 "A robotic-arm service concept for presenting coffee and tea and supporting hospitality workflows in majalis and guest spaces.":"حل خدمة بالذراع الروبوتية لتقديم القهوة والشاي ودعم عمليات الضيافة في المجالس ومساحات استقبال الضيوف.",
 "Configured for the service space":"تهيئة وفق مساحة الخدمة",
 "Guest-facing service workflow":"آلية خدمة موجهة للضيوف",
 "Custom tooling options":"خيارات أدوات مخصصة",
-"Project-based integration":"ربط وتشغيل وفق متطلبات المشروع",
-"A robotic-arm solution configured around your specific task, workspace and workflow.":"نظام بالذراع الروبوتية مهيأ وفق مهمتك ومساحة عملك وآلية التشغيل الخاصة بك.",
+"Project-based integration":"ربط وتجهيز وفق متطلبات المشروع",
+"A robotic-arm solution configured around your specific task, workspace and workflow.":"حل بالذراع الروبوتية مهيأ وفق مهمتك ومساحة عملك وآلية التشغيل الخاصة بك.",
 "Configuration around your task":"تهيئة وفق مهمتك",
 "Workspace and equipment planning":"تخطيط مساحة العمل والمعدات",
 "Project requirements review":"مراجعة متطلبات المشروع"
@@ -153,46 +154,26 @@ Object.assign(translations,{
 "Discuss Your Project With Us":"\u0646\u0627\u0642\u0634 \u0645\u0634\u0631\u0648\u0639\u0643 \u0645\u0639\u0646\u0627",
 "Request a Quote":"\u0627\u0637\u0644\u0628 \u0639\u0631\u0636 \u0633\u0639\u0631"
 });
-const originalText = new WeakMap<Node, string>();
-const originalAttributes = new WeakMap<HTMLElement, Map<string, string>>();
-
-function replaceTrimmed(source: string, replacement: string) {
-  const value = source.trim();
-  return value ? source.replace(value, replacement) : source;
-}
-
 function applyLanguage(arabic:boolean){
-  Object.assign(translations,arabicTranslations);
+  Object.assign(translations,arabicTranslations,servicesSolutionsArabic);
   document.documentElement.lang=arabic?'ar':'en';
   document.documentElement.dir=arabic?'rtl':'ltr';
   const reverse=new Map(Object.entries(translations).map(([english,translated])=>[translated,english]));
+  const translate=(value:string)=>arabic?translations[value]:reverse.get(value);
   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
   let node:Node|null;
   while(node=walker.nextNode()){
-    const current=node.nodeValue;
-    if(!current?.trim())continue;
-    if(!originalText.has(node)){
-      const currentValue=current.trim();
-      const englishValue=reverse.get(currentValue);
-      originalText.set(node,englishValue ? replaceTrimmed(current,englishValue) : current);
-    }
-    const english=originalText.get(node)??current;
-    const translated=translations[english.trim()];
-    node.nodeValue=arabic&&translated ? replaceTrimmed(english,translated) : english;
+    const value=node.nodeValue?.trim();
+    if(!value)continue;
+    const translated=translate(value);
+    if(translated)node.nodeValue=node.nodeValue?.replace(value,translated)??translated;
   }
   document.querySelectorAll<HTMLElement>('[placeholder],[title],[aria-label]').forEach((element)=>{
-    let originals=originalAttributes.get(element);
-    if(!originals){
-      originals=new Map<string,string>();
-      originalAttributes.set(element,originals);
-    }
     for(const attribute of ['placeholder','title','aria-label']){
-      const current=element.getAttribute(attribute);
-      if(!current)continue;
-      if(!originals.has(attribute))originals.set(attribute,reverse.get(current)??current);
-      const english=originals.get(attribute)??current;
-      const translated=translations[english];
-      element.setAttribute(attribute,arabic&&translated ? translated : english);
+      const value=element.getAttribute(attribute);
+      if(!value)continue;
+      const translated=translate(value);
+      if(translated)element.setAttribute(attribute,translated);
     }
   });
 }

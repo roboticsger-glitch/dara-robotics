@@ -1,0 +1,17 @@
+export const solutions = [
+  { slug: "restaurants", title: "Restaurants & Cafés", image: "/solutions/restaurants.png", summary: "Move food and drinks between staff and guests with less repeated walking.", tasks: ["Table delivery and collection", "Guest guidance and greetings", "Floor cleaning between service periods"] },
+  { slug: "hotels", title: "Hotels & Hospitality", image: "/solutions/hotels.png", summary: "Support room delivery, guest service and routine cleaning across the property.", tasks: ["Room and amenity delivery", "Guest guidance in shared spaces", "Scheduled cleaning of common areas"] },
+  { slug: "facilities", title: "Facilities & Malls", image: "/solutions/facilities.png", summary: "Keep busy public spaces cleaner and easier to operate.", tasks: ["Large-area floor cleaning", "Visitor guidance and information", "Repeatable inspection routes"] },
+  { slug: "warehouses", title: "Warehouses & Logistics", image: "/solutions/warehouses.png", summary: "Move materials between repeatable points and reduce manual travel.", tasks: ["Tote and cart transport", "Point-to-point material movement", "Route planning around staff and equipment"] },
+  { slug: "manufacturing", title: "Manufacturing", image: "/solutions/manufacturing.png", summary: "Automate repeatable production and material-handling tasks.", tasks: ["Machine tending and part handling", "Welding and assembly", "Inspection and end-of-line movement"] },
+  { slug: "healthcare", title: "Healthcare", image: "/solutions/healthcare.png", summary: "Support internal delivery and cleaning in care environments.", tasks: ["Supplies and medication transport", "Routine floor cleaning", "Controlled handoff between departments"] },
+  { slug: "solar", title: "Solar & Energy", image: "/solutions/solar.png", summary: "Reduce manual work in solar cleaning and remote inspection.", tasks: ["Solar-panel cleaning", "Scheduled site inspection", "Sensor-based data collection"] },
+  { slug: "security", title: "Security & Inspection", image: "/solutions/security.png", summary: "Collect repeatable observations in difficult or remote areas.", tasks: ["Routine patrol routes", "Visual and thermal inspection", "Remote checks of difficult-to-access areas"] },
+] as const;
+
+export const services = [
+  { slug: "assessment", title: "Site assessment", image: "/services/assessment.png", summary: "We review the task, the site and the routes before recommending a robot.", tasks: ["Observe the current workflow", "Check routes, surfaces and obstacles", "Define a realistic deployment scope"] },
+  { slug: "selection", title: "Robot selection & purchase", image: "/services/selection.png", summary: "We help you choose and buy a robot suited to your operation.", tasks: ["Compare suitable robot platforms", "Agree on configuration and accessories", "Plan delivery and purchase requirements"] },
+  { slug: "training", title: "Installation & training", image: "/services/training.png", summary: "We configure the robot on site and prepare your team for daily use.", tasks: ["Set up routes and workflows", "Test the robot in the real environment", "Train operators and hand over procedures"] },
+  { slug: "support", title: "Maintenance & support", image: "/services/support.png", summary: "We help your team keep the robot operating after rollout.", tasks: ["Plan preventive maintenance", "Arrange spare parts and consumables", "Troubleshoot issues on site or remotely"] },
+] as const;
