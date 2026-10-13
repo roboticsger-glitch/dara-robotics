@@ -158,6 +158,7 @@ function applyLanguage(arabic:boolean){
   Object.assign(translations,arabicTranslations,servicesSolutionsArabic);
   document.documentElement.lang=arabic?'ar':'en';
   document.documentElement.dir=arabic?'rtl':'ltr';
+  document.documentElement.removeAttribute('data-language-pending');
   const reverse=new Map(Object.entries(translations).map(([english,translated])=>[translated,english]));
   const translate=(value:string)=>arabic?translations[value]:reverse.get(value);
   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);

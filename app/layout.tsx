@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" dir="ltr"><body><Header/><main>{children}</main><Footer/><FloatingSocialButtons/></body></html>;
+  return <html lang="en" dir="ltr" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `(function(){try{if(localStorage.getItem('dara-language')==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';document.documentElement.setAttribute('data-language-pending','true')}}catch(e){}})()` }} /></head><body><Header/><main>{children}</main><Footer/><FloatingSocialButtons/></body></html>;
 }
